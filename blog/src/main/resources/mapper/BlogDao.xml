@@ -161,12 +161,4 @@
         from t_blog b
         where DATE_FORMAT(b.update_time, "%Y") = #{year}
     </select>
-
-
-
-
-
-
-
-
 </mapper>

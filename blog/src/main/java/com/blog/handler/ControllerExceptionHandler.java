@@ -10,12 +10,24 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 
-@ControllerAdvice   //拦截所有controller抛出的异常，对异常进行统一的处理
+/**
+ * @Author Baker.chen
+ *
+ * 拦截所有controller抛出的异常，对异常进行统一的处理
+ */
+@ControllerAdvice
 public class ControllerExceptionHandler {
 
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    @ExceptionHandler(Exception.class)  //表示该方法可以处理所有类型异常
+    /**
+     * 该方法可以处理所有类型异常
+     * @param request
+     * @param e
+     * @return
+     * @throws Exception
+     */
+    @ExceptionHandler(Exception.class)
     public ModelAndView exceptionHandler(HttpServletRequest request, Exception e) throws Exception {
 
         //日志打印异常信息

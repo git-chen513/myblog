@@ -8,6 +8,9 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * @Author Baker.chen
+ */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -26,6 +29,7 @@ public class Blog {
     private boolean recommend;
     private Date createTime;
     private Date updateTime;
+    private String description;
 
     //这个属性用来在mybatis中进行连接查询的
     private Long typeId;
@@ -33,7 +37,6 @@ public class Blog {
 
     //获取多个标签的id
     private String tagIds;
-    private String description;
 
     private Type type;
 

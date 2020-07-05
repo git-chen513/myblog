@@ -3,6 +3,9 @@ package com.blog.util;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
+/**
+ * @Author Baker.chen
+ */
 public class MD5Utils {
 
     /**
@@ -35,7 +38,6 @@ public class MD5Utils {
         }
 
     }
-
 
     public static void main(String[] args) {
         System.out.println(code("123456"));

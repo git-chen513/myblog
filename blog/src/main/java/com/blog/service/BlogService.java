@@ -5,6 +5,9 @@ import com.blog.pojo.Blog;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * @Author Baker.chen
+ */
 public interface BlogService {
 
     Blog getBlog(Long id);  //后台展示博客

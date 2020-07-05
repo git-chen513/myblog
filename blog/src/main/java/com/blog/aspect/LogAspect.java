@@ -12,13 +12,18 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 
 import javax.servlet.http.HttpServletRequest;
 
-@Aspect    //定义切面
+/**
+ * @Author Baker.chen
+ * 定义切面
+ */
+@Aspect
 @Component
 public class LogAspect {
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    @Pointcut("execution(* com.blog.controller.*.*(..))")        //定义切入点表达式
+    //定义切入点表达式
+    @Pointcut("execution(* com.blog.controller.*.*(..))")
     public void log(){}
 
     @Before("log()")    //引用切入点

@@ -1,23 +1,33 @@
 
 body {
-    background: url("/images/bg2.jpg");   //默认背景
-    background-size: cover;
+    background: url("/images/bg9.jpg");   //后台管理默认背景
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
 }
 .index-bg{
     background: url("/images/bg4.jpg");
-    background-size: cover;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
 }
 .type-bg{
-    background: url("/images/index.jpg");
-    background-size: cover;
+    background: url("/images/bg2.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
 }
 .tag-bg{
     background: url("/images/bg1.jpeg");
-    background-size: cover;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
 }
 .archives-bg{
-    background: url("/images/bg6.jpg");
-    background-size: cover;
+    background: url("/images/bg9.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
 }
 .aboutme-bg{
     background: url("/images/bg9.jpg");

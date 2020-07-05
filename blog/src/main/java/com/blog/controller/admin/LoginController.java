@@ -12,6 +12,11 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpSession;
 
+/**
+ * @Author Baker.chen
+ *
+ * 管理员登录相关
+ */
 @Controller
 @RequestMapping("/admin")
 public class LoginController {
@@ -31,6 +36,7 @@ public class LoginController {
                         RedirectAttributes attributes){
         User user = userService.checkUser(username, password);
         if(user != null){
+            //将user密码置空之后再保存是为了安全起见，防止密码暴露
             user.setPassword(null);
             session.setAttribute("user", user);
             return "admin/index";

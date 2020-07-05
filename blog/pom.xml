@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com</groupId>
-	<artifactId>blog</artifactId>
+	<artifactId>myblog</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>blog</name>
+	<name>myblog</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
@@ -19,13 +19,12 @@
 	</properties>
 
 	<dependencies>
-		<!--这三个jar包作用是将markdown格式转成html格式-->
+		<!--将markdown格式转成html格式-->
 		<dependency>
 			<groupId>com.atlassian.commonmark</groupId>
 			<artifactId>commonmark</artifactId>
 			<version>0.10.0</version>
 		</dependency>
-
 		<dependency>
 			<groupId>com.atlassian.commonmark</groupId>
 			<artifactId>commonmark-ext-heading-anchor</artifactId>
@@ -37,6 +36,7 @@
 			<version>0.10.0</version>
 		</dependency>
 
+		<!--分页相关-->
 		<dependency>
 			<groupId>com.github.pagehelper</groupId>
 			<artifactId>pagehelper-spring-boot-starter</artifactId>
@@ -48,6 +48,7 @@
 			<artifactId>spring-boot-starter-aop</artifactId>
 		</dependency>
 
+		<!--thymeleaf模板引擎-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
@@ -77,6 +78,7 @@
 			<scope>runtime</scope>
 		</dependency>
 
+		<!--lombok插件-->
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>

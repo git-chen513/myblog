@@ -12,6 +12,11 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
 
+/**
+ * @Author Baker.chen
+ *
+ * 分类管理相关
+ */
 @Controller
 @RequestMapping("/admin")
 public class TypeController {

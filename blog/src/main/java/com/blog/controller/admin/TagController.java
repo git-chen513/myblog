@@ -14,6 +14,11 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
 
+/**
+ * @Author Baker.chen
+ *
+ * 标签管理相关
+ */
 @Controller
 @RequestMapping("/admin")
 public class TagController {
@@ -53,7 +58,8 @@ public class TagController {
             attributes.addFlashAttribute("msg", "添加成功");
         }
         tagService.saveTag(tag);
-        return "redirect:/admin/tags";   //不能直接跳转到tags页面，否则不会显示tag数据(没经过tags方法)
+        //不能直接跳转到tags页面，否则不会显示tag数据(没经过tags方法)
+        return "redirect:/admin/tags";
     }
 
     @PostMapping("/tags/{id}")

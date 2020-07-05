@@ -4,6 +4,9 @@ import com.blog.pojo.Tag;
 
 import java.util.List;
 
+/**
+ * @Author Baker.chen
+ */
 public interface TagService {
 
     int saveTag(Tag tag);

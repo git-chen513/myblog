@@ -16,16 +16,19 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import javax.servlet.http.HttpSession;
 import java.util.List;
 
+/**
+ * @Author Baker.chen
+ *
+ * 博客管理相关
+ */
 @Controller
 @RequestMapping("/admin")
 public class BlogController {
 
     @Autowired
     private BlogService blogService;
-
     @Autowired
     private TypeService typeService;
-
     @Autowired
     private TagService tagService;
 
@@ -34,14 +37,22 @@ public class BlogController {
         model.addAttribute("tags", tagService.getAllTag());
     }
 
-    @GetMapping("/blogs")  //后台显示博客列表
+    /**
+     * 博客管理后台显示博客列表：当管理员点击了后台管理首页index.html的“博客管理”按钮之后会跳转到这个请求
+     * @param pagenum
+     * @param model
+     * @return
+     */
+    @GetMapping("/blogs")
     public String blogs(@RequestParam(required = false,defaultValue = "1",value = "pagenum")int pagenum, Model model){
+        //一页显示五条博客
         PageHelper.startPage(pagenum, 5);
         List<Blog> allBlog = blogService.getAllBlog();
         //得到分页结果对象
         PageInfo pageInfo = new PageInfo(allBlog);
         model.addAttribute("pageInfo", pageInfo);
-        setTypeAndTag(model);  //查询类型和标签
+        //查询类型和标签
+        setTypeAndTag(model);
         return "admin/blogs";
     }
 
@@ -59,7 +70,8 @@ public class BlogController {
 
     @GetMapping("/blogs/input") //去新增博客页面
     public String toAddBlog(Model model){
-        model.addAttribute("blog", new Blog());  //返回一个blog对象给前端th:object
+        //返回一个blog对象给前端th:object
+        model.addAttribute("blog", new Blog());
         setTypeAndTag(model);
         return "admin/blogs-input";
     }

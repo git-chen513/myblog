@@ -5,7 +5,7 @@
 <mapper namespace="com.blog.dao.UserDao">
 
     <select id="queryByUsernameAndPassword" resultType="User">
-        select * from blog.t_user
+        select * from t_user
         where username = #{username} and password = #{password};
     </select>
 
