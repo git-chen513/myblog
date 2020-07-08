@@ -6,3 +6,6 @@ spring:
     active: dev
 
 comment.avatar: /images/avatar.jpg
+
+server:
+  port: 8099
