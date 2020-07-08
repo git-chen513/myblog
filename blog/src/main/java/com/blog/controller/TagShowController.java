@@ -15,6 +15,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
+/**
+ * @Author Baker.chen
+ */
 @Controller
 public class TagShowController {
 
@@ -27,7 +30,7 @@ public class TagShowController {
     @GetMapping("/tags/{id}")
     public String types(@PathVariable Long id, @RequestParam(required = false,defaultValue = "1",value = "pagenum")int pagenum,
                         Model model){
-        PageHelper.startPage(pagenum, 100);  //开启分页
+        PageHelper.startPage(pagenum, 100);
         List<Tag> tags = tagService.getBlogTag();
         //-1从导航点过来的
         if (id == -1){

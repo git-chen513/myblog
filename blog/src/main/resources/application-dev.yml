@@ -5,20 +5,21 @@ spring:
     username: root
     password: 123456
 
-pagehelper:                #分页插件
+#分页插件
+pagehelper:
   helper-dialect: mysql
   reasonable: true
   support-methods-arguments: true
   params:
 
+#mybatis的配置
 mybatis:
   type-aliases-package: com.blog.pojo   #设置别名
-  mapper-locations: classpath:mapper/*.xml   #ָ指定myBatis的核心配置文件与Mapper映射文件
+  mapper-locations: classpath:mapper/*.xml   #ָ指定mapper映射文件
 
-logging:  #日志级别
+#日志级别
+logging:
   level:
     root: info
     com.blog: debug
   file: log/blog-dev.log
-
-  #开发环境

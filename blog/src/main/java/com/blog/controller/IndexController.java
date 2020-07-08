@@ -18,6 +18,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
+/**
+ * @Author Baker.chen
+ */
 @Controller
 public class IndexController {
 
@@ -35,9 +38,12 @@ public class IndexController {
 
         PageHelper.startPage(pagenum, 8);
         List<Blog> allBlog = blogService.getIndexBlog();
-        List<Type> allType = typeService.getBlogType();  //获取博客的类型(联表查询)
-        List<Tag> allTag = tagService.getBlogTag();  //获取博客的标签(联表查询)
-        List<Blog> recommendBlog =blogService.getAllRecommendBlog();  //获取推荐博客
+        //获取博客的类型(联表查询)
+        List<Type> allType = typeService.getBlogType();
+        //获取博客的标签(联表查询)
+        List<Tag> allTag = tagService.getBlogTag();
+        //获取推荐博客
+        List<Blog> recommendBlog =blogService.getAllRecommendBlog();
 
         //得到分页结果对象
         PageInfo pageInfo = new PageInfo(allBlog);

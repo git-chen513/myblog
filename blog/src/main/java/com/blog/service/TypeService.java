@@ -16,7 +16,11 @@ public interface TypeService {
 
     List<Type> getAllType();
 
-    List<Type> getBlogType();  //首页右侧展示type对应的博客数量
+    /**
+     * 首页右侧展示type对应的博客数量
+     * @return
+     */
+    List<Type> getBlogType();
 
     int updateType(Type type);
 

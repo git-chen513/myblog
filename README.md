@@ -1,59 +1,42 @@
-# Spring Boot个人博客项目随笔
+# 个人博客项目
 
-> **作者：朱一鸣** 
+> **作者：陈灿杰/baker**
 >
-> **qq：691639910**
+> **qq：2416871211**
+>
+> **邮箱：2416871211@qq.com**
+>
+> **个人CSDN：https://blog.csdn.net/can_chen**
+>
+> **github：https://github.com/git-chen513**
 
-项目参照b站李仁密老师的Spring Boot开发小而美的个人博客。
 
-**把持久层修改为了mybatis**，可以作为刚学完springboot的练习项目。
 
-目录中有blog.sql文件，可以直接执行生成对应的数据库和表 
 
-功能：**前端展示 + 后台管理**，**添加了萌萌的看板娘**
+目录中有myblog.sql文件，可以直接执行生成对应的数据库和表 
 
-博客地址：**http://www.zhuyiming.top/**
+本地启动项目之后，键入"localhost:8080"即可跳转到博客的首页
+
+要进入管理员界面，需要键入"localhost:8080/admin"即可跳转到管理员登录界面
+
+博客后台管理等操作都必须先登录之后才有权限，因此添加了登录拦截器，对于博客后台管理相关的请求直接通过浏览器地址键入都会被拦截（除了"localhost:8080/admin"）
+
+
 
 **技术组合：**
 
-*  后端：Spring Boot + mybatis 
-*  数据库：MySQL
-*  前端UI：Semantic UI框架 + thymeleaf模板
+*  SpringBoot + mybatis + thymeleaf + mysql + Semantic UI框架 
 
 **工具与环境：**
 
 *  IDEA
 *  Maven 3.6.2
-*  JDK 12
+*  JDK 8以上
 *  springboot 2.2.5
 
-**博客展示界面**
-
-![](https://github.com/Mitsuha666/blog-pictures/blob/master/index.png?raw=true)
 
 
 
-![](https://github.com/Mitsuha666/blog-pictures/blob/master/type.png?raw=true)
-
-![](https://github.com/Mitsuha666/blog-pictures/blob/master/tag.png?raw=true)
-
-
-
-![](https://github.com/Mitsuha666/blog-pictures/blob/master/%E5%BD%92%E6%A1%A3.png?raw=true)
-
-![](https://github.com/Mitsuha666/blog-pictures/blob/master/about.png?raw=true)
-
-
-
-**后台管理界面**
-
-![](https://github.com/Mitsuha666/blog-pictures/blob/master/login.jpg?raw=true)
-
-![](https://github.com/Mitsuha666/blog-pictures/blob/master/blog-admin.jpg?raw=true)
-
-![](https://github.com/Mitsuha666/blog-pictures/blob/master/type-admin.jpg?raw=true)
-
-![](https://github.com/Mitsuha666/blog-pictures/blob/master/blog-input.jpg?raw=true)
 
 
 

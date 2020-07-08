@@ -30,12 +30,16 @@ public class Blog {
     private Date createTime;
     private Date updateTime;
     private String description;
-
-    //这个属性用来在mybatis中进行连接查询的
-    private Long typeId;
     private Long userId;
 
-    //获取多个标签的id
+    /**
+     *  这个属性用来在mybatis中进行连接查询的
+     */
+    private Long typeId;
+
+    /**
+     * 获取多个标签的id
+     */
     private String tagIds;
 
     private Type type;
@@ -50,7 +54,11 @@ public class Blog {
         this.tagIds = tagsToIds(this.getTags());
     }
 
-    //将tags集合转换为tagIds字符串形式：“1,2,3”,用于编辑博客时显示博客的tag
+    /**
+     * 将tags集合转换为tagIds字符串形式：“1,2,3”,用于编辑博客时显示博客的tag
+     * @param tags
+     * @return
+     */
     private String tagsToIds(List<Tag> tags){
         if(!tags.isEmpty()){
             StringBuffer ids = new StringBuffer();

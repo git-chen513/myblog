@@ -1,8 +1,8 @@
-spring:            #全局配置
+#全局配置：关闭thymeleaf模板引擎的缓存、设置开发环境为dev
+spring:
   thymeleaf:
     cache: false
   profiles:
     active: dev
-
 
 comment.avatar: /images/avatar.jpg

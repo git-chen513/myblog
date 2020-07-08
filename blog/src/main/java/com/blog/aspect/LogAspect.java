@@ -22,11 +22,17 @@ public class LogAspect {
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    //定义切入点表达式
+    /**
+     * 定义切入点表达式
+     */
     @Pointcut("execution(* com.blog.controller.*.*(..))")
     public void log(){}
 
-    @Before("log()")    //引用切入点
+    /**
+     * 引用切入点
+     * @param joinPoint
+     */
+    @Before("log()")
     public void doBefore(JoinPoint joinPoint){
 
         ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
@@ -56,9 +62,12 @@ public class LogAspect {
         logger.info("Result: {}", result);
     }
 
+    /**
+     * 用于封装请求信息
+     */
     @Data
     @AllArgsConstructor
-    public class RequestLog{      //用于封装请求信息
+    public class RequestLog{
         private String url;
         private String ip;
         private String classMethod;

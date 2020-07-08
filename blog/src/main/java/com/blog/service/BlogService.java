@@ -10,25 +10,66 @@ import java.util.Map;
  */
 public interface BlogService {
 
-    Blog getBlog(Long id);  //后台展示博客
+    /**
+     * 后台展示博客
+     * @param id
+     * @return
+     */
+    Blog getBlog(Long id);
 
-    Blog getDetailedBlog(Long id);  //前端展示博客
+    /**
+     * 前端展示博客
+     * @param id
+     * @return
+     */
+    Blog getDetailedBlog(Long id);
 
     List<Blog> getAllBlog();
 
-    List<Blog> getByTypeId(Long typeId);  //根据类型id获取博客
+    /**
+     * 根据类型id获取博客
+     * @param typeId
+     * @return
+     */
+    List<Blog> getByTypeId(Long typeId);
 
-    List<Blog> getByTagId(Long tagId);  //根据标签id获取博客
+    /**
+     * 根据标签id获取博客
+     * @param tagId
+     * @return
+     */
+    List<Blog> getByTagId(Long tagId);
 
-    List<Blog> getIndexBlog();  //主页博客展示
+    /**
+     * 主页博客展示
+     * @return
+     */
+    List<Blog> getIndexBlog();
 
-    List<Blog> getAllRecommendBlog();  //推荐博客展示
+    /**
+     * 推荐博客展示
+     * @return
+     */
+    List<Blog> getAllRecommendBlog();
 
-    List<Blog> getSearchBlog(String query);  //全局搜索博客
+    /**
+     * 全局搜索博客
+     * @param query
+     * @return
+     */
+    List<Blog> getSearchBlog(String query);
 
-    Map<String,List<Blog>> archiveBlog();  //归档博客
+    /**
+     * 归档博客
+     * @return
+     */
+    Map<String,List<Blog>> archiveBlog();
 
-    int countBlog();  //查询博客条数
+    /**
+     * 查询博客条数
+     * @return
+     */
+    int countBlog();
 
     int saveBlog(Blog blog);
 
@@ -36,6 +77,10 @@ public interface BlogService {
 
     int deleteBlog(Long id);
 
-    List<Blog> searchAllBlog(Blog blog);  //后台根据标题、分类、推荐搜索博客
-
+    /**
+     * 后台根据标题、分类、推荐搜索博客
+     * @param blog
+     * @return
+     */
+    List<Blog> searchAllBlog(Blog blog);
 }

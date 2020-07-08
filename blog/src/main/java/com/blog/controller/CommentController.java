@@ -14,6 +14,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.servlet.http.HttpSession;
 
+/**
+ * @Author Baker.chen
+ */
 @Controller
 public class CommentController {
 
@@ -26,20 +29,34 @@ public class CommentController {
     @Value("${comment.avatar}")
     private String avatar;
 
-    @GetMapping("/comments/{blogId}")  //展示留言
+    /**
+     * 展示留言
+     * @param blogId
+     * @param model
+     * @return
+     */
+    @GetMapping("/comments/{blogId}")
     public String comments(@PathVariable Long blogId, Model model){
         model.addAttribute("comments", commentService.getCommentByBlogId(blogId));
         model.addAttribute("blog", blogService.getDetailedBlog(blogId));
         return "blog :: commentList";
     }
 
-    @PostMapping("/comments")   //提交留言
+    /**
+     * 提交留言
+     * @param comment
+     * @param session
+     * @return
+     */
+    @PostMapping("/comments")
     public String post(Comment comment, HttpSession session){
         Long blogId = comment.getBlog().getId();
-        comment.setBlog(blogService.getDetailedBlog(blogId));  //绑定博客与评论
+        //绑定博客与评论
+        comment.setBlog(blogService.getDetailedBlog(blogId));
         comment.setBlogId(blogId);
         User user = (User) session.getAttribute("user");
-        if (user != null){   //用户为管理员
+        //用户为管理员
+        if (user != null){
             comment.setAvatar(user.getAvatar());
             comment.setAdminComment(true);
         }else {
