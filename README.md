@@ -22,11 +22,11 @@
 
 博客后台管理等操作都必须先登录之后才有权限，因此添加了登录拦截器，对于博客后台管理相关的请求直接通过浏览器地址键入都会被拦截（除了"localhost:8099/admin"）
 
-
+**个人博客管理系统已经部署上线，可以通过：http://116.62.105.198:8099/ 直接访问首页，通过：http://116.62.105.198:8099/admin 登录后台管理系统 **
 
 **技术组合：**
 
-*  SpringBoot + mybatis + thymeleaf + mysql + Semantic UI框架 
+*  SpringBoot + mybatis + thymeleaf + mysql + Semantic UI框架  +maven
 
 **工具与环境：**
 
