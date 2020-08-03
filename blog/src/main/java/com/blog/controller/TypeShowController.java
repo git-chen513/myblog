@@ -31,11 +31,13 @@ public class TypeShowController {
     public String types(@PathVariable Long id, @RequestParam(required = false,defaultValue = "1",value = "pagenum")int pagenum,
                         Model model){
         PageHelper.startPage(pagenum, 100);
+        // 查询所有的分类，并查询出每个分类下的所有博客（用于在分类页面显示所有的分类名，并且显示每个分类下的博客数量）
         List<Type> types = typeService.getBlogType();
         //-1从导航点过来的
         if (id == -1){
             id = types.get(0).getId();
         }
+        // 根据分类id查询第一个分类下的所有博客信息（分类页面默认显示的就是第一个分类下的博客信息）
         List<Blog> blogs = blogService.getByTypeId(id);
         PageInfo<Blog> pageInfo = new PageInfo<>(blogs);
         model.addAttribute("types", types);

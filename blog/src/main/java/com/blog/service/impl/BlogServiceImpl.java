@@ -67,7 +67,8 @@ public class BlogServiceImpl implements BlogService {
     @Override
     public Map<String, List<Blog>> archiveBlog() {
         List<String> years = blogDao.findGroupYear();
-        Set<String> set = new HashSet<>(years);  //set去掉重复的年份
+        //set去掉重复的年份
+        Set<String> set = new HashSet<>(years);
         Map<String, List<Blog>> map = new HashMap<>();
         for (String year : set) {
             map.put(year, blogDao.findByYear(year));

@@ -10,6 +10,8 @@ import java.util.List;
 
 /**
  * @Author Baker.chen
+ *
+ * 用户信息类，存储博主个人信息
  */
 @Data
 @AllArgsConstructor

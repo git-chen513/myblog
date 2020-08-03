@@ -10,6 +10,8 @@ import java.util.List;
 
 /**
  * @Author Baker.chen
+ *
+ * 博客类，存储博客的基本信息
  */
 @Data
 @AllArgsConstructor
@@ -42,12 +44,25 @@ public class Blog {
      */
     private String tagIds;
 
+    /**
+     * 一篇博客对应一个分类
+     */
     private Type type;
 
+    /**
+     * 一篇博客属于一个博主
+     */
     private User user;
 
+    /**
+     * 一篇博客对应多个标签
+     */
     private List<Tag> tags = new ArrayList<>();
 
+    /**
+     *
+     * 一篇博客对应多条评论
+     */
     private List<Comment> comments = new ArrayList<>();
 
     public void init(){
